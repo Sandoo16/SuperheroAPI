@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- activity_main.xml -->
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="superhero"
+            type="com.example.superheroapp.model.Superhero" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/tvName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{superhero.name}"
+            android:textSize="18sp"
+            android:padding="8dp" />
+
+        <TextView
+            android:id="@+id/tvFullName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{`Full Name:` + superhero.biography.fullname}"
+            android:padding="8dp" />
+
+        <TextView
+            android:id="@+id/tvPowerstats"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{`Powerstats:\n`
+                            + `Intelligence:` + superhero.powerstats.intelligence + `\n`
+                            + `Strength:` + superhero.powerstats.strength + `\n`
+                            + `Speed:` + superhero.powerstats.speed + `\n`
+                            + `Durability:` + superhero.powerstats.durability + `\n`
+                            + `Power:` + superhero.powerstats.power + `\n`
+                            + `Combat:` + superhero.powerstats.combat}"
+            android:padding="8dp" />
+
+        <TextView
+            android:id="@+id/tvBiography"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{`Biography:\n`
+                            + `Place of Birth:` + superhero.biography.placeofbirth + `\n`
+                            + `First Appearance:` + superhero.biography.firstappearance + `\n`
+                            + `Publisher:` + superhero.biography.publisher + `\n`
+                            + `Alignment:` + superhero.biography.alignment}"
+            android:padding="8dp" />
+
+        <ImageView
+            android:id="@+id/ivImage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scaleType="centerCrop"
+            android:adjustViewBounds="true"
+            android:layout_marginTop="16dp"
+            app:imageUrl="@{superhero.image.url}" />
+
+    </LinearLayout>
+</layout>
